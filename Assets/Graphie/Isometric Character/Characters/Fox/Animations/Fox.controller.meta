@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 482d157c33e18e64faf037da74381b21
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 302328
+  packageName: Isometric Character Pack
+  packageVersion: 1.0
+  assetPath: Assets/Graphie/Isometric Character/Characters/Fox/Animations/Fox.controller
+  uploadId: 709777

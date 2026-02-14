@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b2d0e6bf5410e864e972509edd7aa66f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 302328
+  packageName: Isometric Character Pack
+  packageVersion: 1.0
+  assetPath: Assets/Graphie/Isometric Character/Characters/Duck/Animations/Duck.controller
+  uploadId: 709777

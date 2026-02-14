@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 36cc9eca708093b4db989417565dca54
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 302328
+  packageName: Isometric Character Pack
+  packageVersion: 1.0
+  assetPath: Assets/Graphie/Isometric Character/Characters/Fox/Animations/Front_Walk.anim
+  uploadId: 709777

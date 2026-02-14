@@ -9,14 +9,14 @@ public class CustomerMovement : MonoBehaviour
     public float minWalkTime = 1f;
     public float maxWalkTime = 3f;
 
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     private Vector2 moveDirection;
     private bool isWalking = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         StartCoroutine(Wander());
     }
 

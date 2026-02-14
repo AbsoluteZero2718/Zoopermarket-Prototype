@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5dd70c0be6d910945a9050d48d057b7c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 302328
+  packageName: Isometric Character Pack
+  packageVersion: 1.0
+  assetPath: Assets/Graphie/Isometric Character/Characters/Rabbit/Animations/Front_Idle_Stand.anim
+  uploadId: 709777

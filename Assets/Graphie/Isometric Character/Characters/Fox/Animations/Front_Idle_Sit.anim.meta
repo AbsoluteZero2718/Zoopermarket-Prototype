@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b090f571b084fb84fa245e3cee861353
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 302328
+  packageName: Isometric Character Pack
+  packageVersion: 1.0
+  assetPath: Assets/Graphie/Isometric Character/Characters/Fox/Animations/Front_Idle_Sit.anim
+  uploadId: 709777

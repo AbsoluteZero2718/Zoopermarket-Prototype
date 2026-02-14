@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c2e1396321195b7419e39dd8429f96d3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 302328
+  packageName: Isometric Character Pack
+  packageVersion: 1.0
+  assetPath: Assets/Graphie/Isometric Character/Characters/Goat/Animations/Back_Idle_Stand.anim
+  uploadId: 709777

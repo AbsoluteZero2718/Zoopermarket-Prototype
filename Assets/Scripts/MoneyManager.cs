@@ -52,7 +52,7 @@ public class MoneyManager : MonoBehaviour
     {
         if(moneyText != null)
         {
-            moneyText.text = "$" + currentMoney.ToString("N0");
+            moneyText.text =  currentMoney.ToString("N0");
         }
     }
 

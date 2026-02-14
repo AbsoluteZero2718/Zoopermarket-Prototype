@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: 559a64ce6c0fcf948b73745ca7f00339
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Gluten
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284843
+  packageName: Stylized Fonts - Cartoony
+  packageVersion: 1.0
+  assetPath: Assets/Stylized Fonts/Cartoony/TTF/Gluten-Bold.ttf
+  uploadId: 664512

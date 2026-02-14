@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: 26bc4ebc84cd44e48bbd05efd2239cea
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Erica One
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284843
+  packageName: Stylized Fonts - Cartoony
+  packageVersion: 1.0
+  assetPath: Assets/Stylized Fonts/Cartoony/TTF/EricaOne-Regular.ttf
+  uploadId: 664512

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 69a3189a1f79bd843acdb5744b9b245f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284843
+  packageName: Stylized Fonts - Cartoony
+  packageVersion: 1.0
+  assetPath: Assets/Stylized Fonts/Cartoony/TextFontManager.cs
+  uploadId: 664512

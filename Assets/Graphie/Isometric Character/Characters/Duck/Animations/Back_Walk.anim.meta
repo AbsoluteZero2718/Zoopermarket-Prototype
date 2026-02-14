@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5fdd1018a62401f48827701017d6f67f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 302328
+  packageName: Isometric Character Pack
+  packageVersion: 1.0
+  assetPath: Assets/Graphie/Isometric Character/Characters/Duck/Animations/Back_Walk.anim
+  uploadId: 709777
