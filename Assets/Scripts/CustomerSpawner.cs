@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class CustomerSpawner : MonoBehaviour
 {
     [SerializeField] public GameObject customerPrefab;
-    [SerializeField] public int maxCustomers = 10;
+    [SerializeField] public int maxCustomers;
     [SerializeField] private int currentCustomerCount = 0;
     [SerializeField] private float spawnTime = 5f;
 
