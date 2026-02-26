@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Wall
+  - Exit
+  - Customer
+  - Items
+  - Counter
   layers:
   - Default
   - TransparentFX

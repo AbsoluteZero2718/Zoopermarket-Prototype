@@ -1,6 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class CustomerSpawner : MonoBehaviour
 {
@@ -8,41 +9,34 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] public int maxCustomers;
     [SerializeField] private int currentCustomerCount = 0;
     [SerializeField] private float spawnTime = 5f;
+    [SerializeField] private bool isSpawning = true;
 
-    [SerializeField] private List<GameObject> instantiatedObjects = new List<GameObject>();
-
-    private float timer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        timer += Time.deltaTime;
+        StartCoroutine(SpawnManager());
+    }
 
-        if (timer >= spawnTime)
+    IEnumerator SpawnManager()
+    {
+        while (isSpawning)
         {
-            SpawnSprite();
-            timer = 0f;
+            if (currentCustomerCount < maxCustomers)
+            {
+                SpawnCustomer();
+            }
+            yield return new WaitForSeconds(spawnTime);
         }
     }
 
-    public void SpawnSprite()
+    void SpawnCustomer()
     {
-        
-        GameObject newObject = Instantiate(customerPrefab, transform.position, Quaternion.identity);
-        instantiatedObjects.Add(newObject);
+        Instantiate(customerPrefab, transform.position, Quaternion.identity);
         currentCustomerCount++;
-
-        if(instantiatedObjects.Count > maxCustomers)
-        {
-            GameObject oldestCustomer = instantiatedObjects[0];
-            instantiatedObjects.RemoveAt(0);
-            Destroy(oldestCustomer);
-            currentCustomerCount--;
-
-        }
-
-
     }
-    
+    public void CustomerDestroyed()
+    {
+        currentCustomerCount--;
+    }
 }
+
+    

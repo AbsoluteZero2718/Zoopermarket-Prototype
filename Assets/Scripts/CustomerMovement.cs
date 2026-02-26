@@ -48,5 +48,8 @@ public class CustomerMovement : MonoBehaviour
         {
             isWalking = false;
         }
+
+      
+
     }
 }

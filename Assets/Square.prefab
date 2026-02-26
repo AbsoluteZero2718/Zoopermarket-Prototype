@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: -2181951394842511766}
   - component: {fileID: 2885604675548723207}
   - component: {fileID: -8423310282691832839}
+  - component: {fileID: 5090961726032955628}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Customer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   minWaitTime: 1
-  maxWaitTime: 3
+  maxWaitTime: 5
   minWalkTime: 1
   maxWalkTime: 3
 --- !u!50 &-8423310282691832839
@@ -180,3 +181,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &5090961726032955628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3916840703604379394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421f7eeac3451ae4493065a881454c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
