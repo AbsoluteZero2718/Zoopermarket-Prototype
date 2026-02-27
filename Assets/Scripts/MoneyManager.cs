@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 
@@ -8,6 +9,12 @@ public class MoneyManager : MonoBehaviour
 
     [SerializeField] private long currentMoney;
     [SerializeField] private TextMeshProUGUI moneyText;
+
+    public GameObject cashierPrefab;
+    public int cashierAmt = 1;
+    public int speedUpgradeCost = 50;
+    public Button upgradeCashierButton;
+    public TextMeshProUGUI speedCostText;
 
     private void Awake()
     {
@@ -23,6 +30,8 @@ public class MoneyManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        currentMoney = PlayerPrefs.GetInt("Coins", 0);
+
         UpdateMoneyUI();
         StartCoroutine(AutoEarn(1f));
     }
@@ -33,20 +42,38 @@ public class MoneyManager : MonoBehaviour
         UpdateMoneyUI();
     }
 
-    public bool canAfford(long cost)
+    public void BuySpeedUpgrade()
     {
-        return currentMoney >= cost;
+        if (currentMoney >= speedUpgradeCost)
+        {
+            currentMoney -= speedUpgradeCost;
+            Instantiate(cashierPrefab, cashierPrefab.transform.position, Quaternion.identity);
+            cashierAmt++;
+
+
+            speedUpgradeCost += 100;
+
+            PlayerPrefs.SetInt("Coins", (int)currentMoney);
+          
+
+            Debug.Log("Cashiers Upgraded! There are now " + cashierAmt + " cashiers!");
+            UpdateMoneyUI();
+        }
+        else
+        {
+            Debug.Log("Not enough coins to upgrade!");
+        }
     }
 
-    public bool TryPurchase(long cost)
-    {
-        if(canAfford(cost))
-        {
-            ChangeMoney(-cost);
-            return true;
-        }
-        return false;
-    }
+    //public bool TryPurchase(long cost)
+    //{
+    //    if(BuySpeedUpgrade(cost))
+    //    {
+    //        ChangeMoney(-cost);
+    //        return true;
+    //    }
+    //    return false;
+    
 
     private void UpdateMoneyUI()
     {
@@ -54,6 +81,8 @@ public class MoneyManager : MonoBehaviour
         {
             moneyText.text =  currentMoney.ToString("N0");
         }
+
+        speedCostText.text = speedUpgradeCost.ToString();
     }
 
     private IEnumerator AutoEarn(float interval)

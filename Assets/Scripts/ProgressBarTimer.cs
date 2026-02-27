@@ -10,6 +10,9 @@ public class ProgressBarTimer : MonoBehaviour
 
     public GameObject progressBarPrefab;
     public Transform progressBarSpawnPoint;
+
+    public float currentProgress = 0f;
+    public float maxProgress = 100f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,6 +38,8 @@ public class ProgressBarTimer : MonoBehaviour
                 isCounting = false;
             }
         }
+
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -58,6 +63,23 @@ public class ProgressBarTimer : MonoBehaviour
         {
             timeLeft = duration;
             isCounting = true;
+        }
+    }
+
+    public void UpdateProgress(float addedProgress)
+    {
+        currentProgress += addedProgress;
+        currentProgress = Mathf.Clamp(currentProgress, 0f, maxProgress);
+        UpdateVisuals();
+    }
+
+    public void UpdateVisuals()
+    {
+        float fillAmount = currentProgress / maxProgress;
+
+        if (progressBarIMG != null)
+        {
+            progressBarIMG.fillAmount = fillAmount;
         }
     }
 }
