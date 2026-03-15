@@ -11,6 +11,7 @@ public class MoneyManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI moneyText;
 
     public GameObject cashierPrefab;
+    public GameObject spawnVFX;
     public int cashierAmt = 1;
     public int speedUpgradeCost = 50;
     public Button upgradeCashierButton;
@@ -44,10 +45,11 @@ public class MoneyManager : MonoBehaviour
 
     public void BuySpeedUpgrade()
     {
-        if (currentMoney >= speedUpgradeCost)
+        if (currentMoney >= speedUpgradeCost && spawnVFX != null)
         {
             currentMoney -= speedUpgradeCost;
             Instantiate(cashierPrefab, cashierPrefab.transform.position, Quaternion.identity);
+            Instantiate(spawnVFX, cashierPrefab.transform.position, Quaternion.identity);
             cashierAmt++;
 
 
@@ -65,14 +67,7 @@ public class MoneyManager : MonoBehaviour
         }
     }
 
-    //public bool TryPurchase(long cost)
-    //{
-    //    if(BuySpeedUpgrade(cost))
-    //    {
-    //        ChangeMoney(-cost);
-    //        return true;
-    //    }
-    //    return false;
+
     
 
     private void UpdateMoneyUI()
