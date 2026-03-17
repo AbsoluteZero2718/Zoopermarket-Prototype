@@ -32,6 +32,6 @@ public class PauseManager : MonoBehaviour
     public void GoToMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Zoopermarket Menu Screen");
     }
 }
