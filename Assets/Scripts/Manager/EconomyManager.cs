@@ -13,7 +13,7 @@ public class EconomyManager : MonoBehaviour
     [SerializeField] private int startingProduce = 50;
 
     private long currentMoney;
-    private int currentProduce;
+    public int currentProduce;
 
     public long CurrentMoney => currentMoney;
     public int CurrentProduce => currentProduce;

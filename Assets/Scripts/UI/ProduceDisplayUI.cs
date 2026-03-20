@@ -5,17 +5,17 @@ public class ProduceDisplayUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI produceText;
 
-    private void Awake()
+    public void Awake()
     {
         EconomyManager.Instance.OnProduceChanged += UpdateDisplay;
     }
 
-    private void Start()
+    public void Start()
     {
         UpdateDisplay(EconomyManager.Instance.CurrentProduce);
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         if (EconomyManager.Instance != null)
         {
@@ -23,7 +23,7 @@ public class ProduceDisplayUI : MonoBehaviour
         }
     }
 
-    private void UpdateDisplay(int currentProduce)
+    public void UpdateDisplay(int currentProduce)
     {
         produceText.text = currentProduce.ToString("N0");
     }
