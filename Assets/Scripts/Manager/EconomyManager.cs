@@ -9,14 +9,20 @@ public class EconomyManager : MonoBehaviour
 
     public event Action<int> OnProduceChanged;
 
+    public event Action<int> OnTicketsChanged;
+
+    [Header("Starting Values")]
     [SerializeField] private long startingMoney = 200;
     [SerializeField] private int startingProduce = 50;
+    [SerializeField] private int startingTickets = 0;
 
     private long currentMoney;
-    public int currentProduce;
+    private int currentProduce;
+    private int currentTickets;
 
     public long CurrentMoney => currentMoney;
     public int CurrentProduce => currentProduce;
+    public int CurrentTickets => currentTickets;
 
     private void Awake()
     {
@@ -32,9 +38,11 @@ public class EconomyManager : MonoBehaviour
     {
         currentMoney = SaveManager.Instance.LoadLong("PlayerMoney", startingMoney);
         currentProduce = PlayerPrefs.GetInt("PlayerProduce", startingProduce);
+        currentTickets = PlayerPrefs.GetInt("PlayerTickets", startingTickets);
 
         OnMoneyChanged?.Invoke(currentMoney);
         OnProduceChanged?.Invoke(currentProduce);
+        OnTicketsChanged?.Invoke(currentTickets);
     }
 
     public void AddMoney(float amount)
@@ -83,5 +91,28 @@ public class EconomyManager : MonoBehaviour
     public bool HasEnoughProduce(int amount)
     {
         return currentProduce >= amount;
+    }
+
+    public void AddTickets(int amount)
+    {
+        if (amount <= 0) return;
+
+        currentTickets += amount;
+        PlayerPrefs.SetInt("PlayerTickets", currentTickets);
+        OnTicketsChanged?.Invoke(currentTickets);
+    }
+
+    public void SpendTickets(int amount)
+    {
+        if (amount <= 0) return;
+
+        currentTickets -= amount;
+        PlayerPrefs.SetInt("PlayerTickets", currentTickets);
+        OnTicketsChanged?.Invoke(currentTickets);
+    }
+
+    public bool HasEnoughTickets(int amount)
+    {
+        return currentTickets >= amount;
     }
 }

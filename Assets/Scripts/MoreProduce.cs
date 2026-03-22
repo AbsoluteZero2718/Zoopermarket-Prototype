@@ -4,26 +4,16 @@ using UnityEngine.UI;
 
 public class MoreProduce : MonoBehaviour
 {
-    public Button seasonalButton;
     public int produceCount;
     public TMP_Text produceCountText;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private void Start()
     {
-        UpdateUI();
+        produceCountText.text = "x" + produceCount.ToString();
     }
 
     public void AddProduce()
     {
-        EconomyManager.Instance.currentProduce += 200;
-        UpdateUI();
+        EconomyManager.Instance.AddProduce(produceCount);
     }
-
-    void UpdateUI()
-    {
-        produceCountText.text = EconomyManager.Instance.CurrentProduce.ToString();
-    }
-
-    // Update is called once per frame
-   
 }

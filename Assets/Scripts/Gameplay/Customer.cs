@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Customer : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private int minItemsToBuy = 1;
     [SerializeField] private int maxItemsToBuy = 3;
@@ -50,6 +51,8 @@ public class Customer : MonoBehaviour
 
     private void Update()
     {
+        UpdateSortingOrder();
+
         if (currentState == State.ApproachingLine)
         {
             currentMoveTargetPosition = targetCashier.GetLineTailPosition();
@@ -72,6 +75,11 @@ public class Customer : MonoBehaviour
         {
             OnDestinationReached();
         }
+    }
+
+    private void UpdateSortingOrder()
+    {
+        spriteRenderer.sortingOrder = (int)(transform.position.y * -100);
     }
 
     private void MoveTowardsTarget()

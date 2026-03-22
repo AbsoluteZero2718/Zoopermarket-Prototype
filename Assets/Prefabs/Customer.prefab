@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b107ae3d6c86b7848a34ebdb2dfe9293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8956811007293122035}
   moveSpeed: 2
   minItemsToBuy: 1
   maxItemsToBuy: 3
+  queueSwitchThreshold: 2

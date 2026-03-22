@@ -4,27 +4,16 @@ using TMPro;
 
 public class MoreTickets : MonoBehaviour
 {
-    public Button ticketBundleButton;
     public int ticketCount;
     public TMP_Text ticketCountText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        UpdateUI();    
+        ticketCountText.text = "x" + ticketCount.ToString();
     }
 
     public void AddTickets()
     {
-        TicketSpawn.instance.ticketCount += 50;
-        UpdateUI();
+        EconomyManager.Instance.AddTickets(ticketCount);
     }
-
-    void UpdateUI()
-    {
-        ticketCountText.text = TicketSpawn.instance.ticketCount.ToString();
-    }
-
-    // Update is called once per frame
-  
 }

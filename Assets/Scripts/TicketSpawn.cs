@@ -1,89 +1,42 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
-using TMPro;
-using Unity.VisualScripting;
-
 
 public class TicketSpawn : MonoBehaviour
 {
-    public GameObject ticketPrefab;
+    [SerializeField] private GameObject ticketPrefab;
+    [SerializeField] private float spawnInterval = 10f;
 
-    public float minX = -8f;
-    public float maxX = 8f;
-    public float minY = -4f;
-    public float maxY = 4f;
+    [Header("Spawn Area")]
+    [SerializeField] private float minX = -8f;
+    [SerializeField] private float maxX = 8f;
+    [SerializeField] private float minY = -4f;
+    [SerializeField] private float maxY = 4f;
 
-    public TMP_Text ticketCountText;
-    public int ticketCount = 0;
+    [Header("Gizmo Settings")]
+    [SerializeField] private Color gizmoColor = Color.yellow;
 
-    public float spawnInterval = 10f;
-    public static TicketSpawn instance;
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    private void Start()
     {
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    
-    void Start()
-    {
-        StartCoroutine(SpawnTickets());
+        StartCoroutine(SpawnTicketsRoutine());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator SpawnTicketsRoutine()
     {
-        SpawnItem();
-
-    }
-
-    public void SpawnItem()
-    {
-        if(ticketCountText != null)
-        {
-            ticketCountText.text = "" + ticketCount;
-
-            if(Input.GetMouseButtonDown(0))
-            {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
-
-                if(hit.collider != null)
-                {
-                    Destroy(hit.collider.gameObject);
-                    ticketCount++;
-
-                }
-            }
-          
-           
-        }
-
-    }
-
-   
-    IEnumerator SpawnTickets()
-    {
-
-        Vector2 randomPos = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
         while (true)
         {
             yield return new WaitForSeconds(spawnInterval);
-            Instantiate(ticketPrefab, randomPos, Quaternion.identity);
-            
 
+            Vector2 randomPos = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+            Instantiate(ticketPrefab, randomPos, Quaternion.identity);
         }
-       
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Vector3 center = new Vector3((minX + maxX) / 2f, (minY + maxY) / 2f, 0);
+        Vector3 size = new Vector3(maxX - minX, maxY - minY, 0.1f);
+
+        Gizmos.color = gizmoColor;
+        Gizmos.DrawWireCube(center, size);
     }
 }
